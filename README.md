@@ -71,3 +71,34 @@ In this milestone, the foundational backend structure for the e-commerce applica
 - Configured version control with Git and included a .gitignore file to exclude sensitive files and unnecessary folders like node_modules.
 
 This milestone sets up a solid backend foundation for further development, including API implementation, user authentication, and business logic handling. It ensures that the project is structured, secure, and ready for future expansion.
+
+
+## Milestone 4: Creating User Model and Controller
+
+### Overview
+In this milestone, we implemented user authentication and profile management for the eCommerce platform. The following tasks were completed:
+
+1. **User Model**: 
+   - A `user.js` model was created under the `model` directory to define the user schema. This includes fields such as `name`, `email`, and `password`.
+   - Passwords are securely hashed using `bcryptjs`.
+
+2. **User Controller**:
+   - A `user.js` controller was added under the `controller` directory to manage user-related functionality.
+   - Key functionalities include creating new users, logging in, and updating user details.
+
+3. **File Upload Handling**:
+   - `multer` was integrated to handle file uploads, such as user profile images. A separate `multer.js` file was created for configuration.
+
+4. **App Configuration**:
+   - The necessary routes were added to `app.js` to integrate the user model and controller into the application.
+   
+### Technologies Used:
+- Node.js
+- Express.js
+- Multer (for file uploads)
+- bcryptjs (for password hashing)
+
+These updates help to set up the basic user management system needed for the eCommerce platform.
+
+---
+
