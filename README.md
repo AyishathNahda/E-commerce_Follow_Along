@@ -102,3 +102,42 @@ These updates help to set up the basic user management system needed for the eCo
 
 ---
 
+## Milestone 5: Creating the Signup Page
+In this milestone, we focused on developing the signup page to enable users to create an account within the application. Key achievements include:
+
+### Signup Page Implementation:
+Developed the Signup.jsx component with a user-friendly interface for account registration.
+Included form fields for user details such as name, email, and password.
+### Form Validation:
+Added client-side validation logic to ensure proper input formatting and error messages for invalid entries.
+### Integration with Routing:
+Configured navigation to and from the signup page using React Router for seamless user flow.
+### Styling:
+Enhanced the design of the signup page to align with the application's overall styling for a consistent user experience.
+### Code Organization:
+Refactored the code into reusable components where possible to promote cleaner and more maintainable code.
+This milestone enhances the user experience by allowing new users to register, paving the way for further integration with back-end user authentication systems.
+ 
+ ---
+
+
+## Milestone 6: Encrypting Passwords and Storing User Data
+In this milestone, the focus was on enhancing the security and data handling during the user registration process. Key achievements include:
+
+### Password Encryption:
+Utilized bcrypt to hash user passwords during the signup process to ensure secure storage.
+Replaced plain-text password storage with hashed passwords in the database.
+### Complete User Data Storage:
+Stored all user information, including name, email, and the hashed password, in the database using the User model.
+Ensured sensitive data is handled securely and adheres to best practices.
+### Validation Enhancements:
+Added additional backend validation to verify that required fields are provided during signup.
+Prevented duplicate user registrations by ensuring email uniqueness in the database.
+### API Integration:
+Updated the registration endpoint (/api/users/register) to handle password hashing and data storage seamlessly.
+### Live Coding Walkthrough:
+Demonstrated the implementation of these features during a live coding session, explaining the importance of password encryption and secure data handling.
+
+This milestone significantly enhances the application's security by protecting user credentials and laying a solid foundation for authentication and authorization in future milestones.
+
+---
