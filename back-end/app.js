@@ -1,9 +1,10 @@
 const express = require("express");
 const app = express();
-const ErrorHandler = require("./Middleware/error");
+const ErrorHandler = require("./middleware/error");
 const cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
 const cors = require("cors");
+const product = require('./controller/product');
 
 app.use(express.json());
 app.use(cookieParser());
@@ -20,6 +21,7 @@ if (process.env.NODE_ENV !== "PRODUCTION") {
 const user = require("./controller/user");
 
 app.use("/api/v2/user", user);
+app.use("/api/v2/product", product);
 
 // it's for ErrorHandling
 app.use(ErrorHandler);
