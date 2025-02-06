@@ -193,10 +193,8 @@ In this milestone, we focused on creating a visually appealing and functional ho
 
 ### 4. Code Submission:  
 - Pushed the updated code to the GitHub repository.  
-- Verified that the repository is publicly accessible for evaluation.
+- Verified that the repository is publicly accessible for evaluation.  
 
-
------
 ## Milestone 9: Creating the Product Form  
 
 In this milestone, we focused on building a form that allows users to add products, including support for multiple product images. Key achievements include:  
@@ -221,35 +219,36 @@ In this milestone, we focused on building a form that allows users to add produc
 - Considered additional features for better access control:  
   - *Admin Access:* Restrict product creation to admin users only.  
   - *Shop Profiles:* Implemented a feature where only users with shop profiles can upload products.  
-  - *Enhanced UI/UX:* Improved form design for a seamless user experience.
+  - *Enhanced UI/UX:* Improved form design for a seamless user experience.  
 
+## Milestone 10: Creating the Product Schema and API Endpoint  
 
-Milestone 10: Creating the Product Schema and API Endpoint
-In this milestone, we focused on defining the structure of product data and creating an API endpoint to store product details in MongoDB.
+In this milestone, we focused on defining the structure of product data and creating an API endpoint to store product details in MongoDB.  
 
-1. Product Schema Definition:
-Defined a structured product schema using Mongoose to store product data in MongoDB.
-Ensured each field has proper validation to maintain data integrity:
-Name: Required, string
-Description: Required, string
-Price: Required, number, with validation for non-negative values
-Image URL(s): Required, array of strings for multiple image storage
-Category: Required, string
-CreatedAt: Automatically generated timestamp
-2. Endpoint Creation:
-Developed a POST endpoint (/api/products) to accept product details from the frontend.
-Implemented validation to ensure only correctly formatted data is stored in the database.
-Saved product information to MongoDB using Mongoose models.
-3. Data Validation & Integrity:
-Enforced strict validation to prevent invalid or incomplete product entries.
-Returned appropriate error messages for missing or incorrect data inputs.
-4. Future Enhancements & Experimentation:
-Considered adding role-based access control:
-Admin Access: Only admin users can create new products.
-Shop Profiles: Restrict product uploads to users with a registered shop profile.
-Image Upload Handling: Implement a cloud-based solution (e.g., Cloudinary, AWS S3) for better image management.
+### 1. Product Schema Definition:  
+- Defined a structured product schema using Mongoose to store product data in MongoDB.  
+- Ensured each field has proper validation to maintain data integrity:  
+  - *Name:* Required, string  
+  - *Description:* Required, string  
+  - *Price:* Required, number, with validation for non-negative values  
+  - *Image URL(s):* Required, array of strings for multiple image storage  
+  - *Category:* Required, string  
+  - *CreatedAt:* Automatically generated timestamp  
 
+### 2. Endpoint Creation:  
+- Developed a *POST* endpoint (/api/products) to accept product details from the frontend.  
+- Implemented validation to ensure only correctly formatted data is stored in the database.  
+- Saved product information to MongoDB using Mongoose models.  
 
+### 3. Data Validation & Integrity:  
+- Enforced strict validation to prevent invalid or incomplete product entries.  
+- Returned appropriate error messages for missing or incorrect data inputs.  
+
+### 4. Future Enhancements & Experimentation:  
+- Considered adding role-based access control:  
+  - *Admin Access:* Only admin users can create new products.  
+  - *Shop Profiles:* Restrict product uploads to users with a registered shop profile.  
+  - *Image Upload Handling:* Implement a cloud-based solution (e.g., Cloudinary, AWS S3) for better image management.  
 
 ## Milestone 11: Fetching and Displaying Product Data  
 
@@ -296,4 +295,29 @@ In this milestone, we focused on filtering products based on the *user's email* 
 ### *4. Future Enhancements & Experimentation:*  
 - *Role-Based Access:* Only allow authorized users (e.g., shop owners or admins) to upload and view specific products.  
 - *Advanced Filtering:* Extend filtering options to include categories, price ranges, and product availability.  
-- *Search Functionality:* Implement a search bar for users to quickly find their uploaded products.
+- *Search Functionality:* Implement a search bar for users to quickly find their uploaded products. 
+
+## Milestone 13: Updating Product Data and Form Auto-Fill  
+
+In this milestone, we focused on implementing update functionality for product data, allowing users to modify existing product information through an editable form. Key achievements include:  
+
+### Backend: Creating an Update Endpoint  
+- Developed a PUT endpoint to receive and update existing product data in MongoDB.  
+- Used Mongoose to find the product by its ID and update its fields.  
+- Ensured data validation to maintain data integrity and prevent errors during updates.  
+- Handled potential errors, such as cases where the product is not found.  
+
+### Frontend: Form Auto-Fill and Edit Functionality  
+- Added an Edit button to each product card.  
+- Clicking the Edit button opens a form pre-filled with the existing product details.  
+- Users can modify the form fields and save changes to update the product.  
+- Used React state and useEffect to manage form data and populate it with the product’s current details.  
+
+### UI and UX Enhancements  
+- Ensured a responsive layout for the edit form, providing a user-friendly experience.  
+- Added error messages for invalid data and success notifications on successful updates.  
+
+### Future Enhancements & Experimentation  
+- *Admin-Only Access*: Restrict update functionality to authorized users, such as shop owners or admins.  
+- *Real-Time Updates*: Implement real-time data updates on the product listing page.  
+- *Optimized Form Design*: Enhance the form with file uploads for updating product images and improved field validation.
