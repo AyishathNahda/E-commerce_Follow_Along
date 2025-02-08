@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const ErrorHandler = require("./middleware/error");
+const ErrorHandler = require("./Middleware/error");
 const cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
 const cors = require("cors");
