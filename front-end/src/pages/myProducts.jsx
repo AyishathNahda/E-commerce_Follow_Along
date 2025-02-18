@@ -3,12 +3,12 @@ import React, { useEffect, useState } from "react";
 import Myproduct from "../components/auth/myProducts"; // <-- Import the Product component
 
 import Nav from "../components/auth/nav";
-
+GIT
 export default function MyProducts() {
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
-    const email = "yash@gmail.com";
+    const email = "AYISHATH@gmail.com";
 
     useEffect(() => {
         fetch(`http://localhost:8000/api/v2/product/my-products?email=${email}`)
