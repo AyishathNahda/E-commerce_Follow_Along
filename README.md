@@ -217,9 +217,9 @@ In this milestone, we focused on building a form that allows users to add produc
 
 ### 4. Future Enhancements & Experimentation:  
 - Considered additional features for better access control:  
-  - *Admin Access:* Restrict product creation to admin users only.  
-  - *Shop Profiles:* Implemented a feature where only users with shop profiles can upload products.  
-  - *Enhanced UI/UX:* Improved form design for a seamless user experience.  
+  - Admin Access: Restrict product creation to admin users only.  
+  - Shop Profiles: Implemented a feature where only users with shop profiles can upload products.  
+  - Enhanced UI/UX: Improved form design for a seamless user experience.  
 
 ## Milestone 10: Creating the Product Schema and API Endpoint  
 
@@ -228,15 +228,15 @@ In this milestone, we focused on defining the structure of product data and crea
 ### 1. Product Schema Definition:  
 - Defined a structured product schema using Mongoose to store product data in MongoDB.  
 - Ensured each field has proper validation to maintain data integrity:  
-  - *Name:* Required, string  
-  - *Description:* Required, string  
-  - *Price:* Required, number, with validation for non-negative values  
-  - *Image URL(s):* Required, array of strings for multiple image storage  
-  - *Category:* Required, string  
-  - *CreatedAt:* Automatically generated timestamp  
+  - Name: Required, string  
+  - Description: Required, string  
+  - Price: Required, number, with validation for non-negative values  
+  - Image URL(s): Required, array of strings for multiple image storage  
+  - Category: Required, string  
+  - CreatedAt: Automatically generated timestamp  
 
 ### 2. Endpoint Creation:  
-- Developed a *POST* endpoint (/api/products) to accept product details from the frontend.  
+- Developed a POST endpoint (/api/products) to accept product details from the frontend.  
 - Implemented validation to ensure only correctly formatted data is stored in the database.  
 - Saved product information to MongoDB using Mongoose models.  
 
@@ -246,56 +246,56 @@ In this milestone, we focused on defining the structure of product data and crea
 
 ### 4. Future Enhancements & Experimentation:  
 - Considered adding role-based access control:  
-  - *Admin Access:* Only admin users can create new products.  
-  - *Shop Profiles:* Restrict product uploads to users with a registered shop profile.  
-  - *Image Upload Handling:* Implement a cloud-based solution (e.g., Cloudinary, AWS S3) for better image management.  
+  - Admin Access: Only admin users can create new products.  
+  - Shop Profiles: Restrict product uploads to users with a registered shop profile.  
+  - Image Upload Handling: Implement a cloud-based solution (e.g., Cloudinary, AWS S3) for better image management.  
 
 ## Milestone 11: Fetching and Displaying Product Data  
 
 In this milestone, we focused on retrieving product data from the backend and dynamically displaying it in the frontend. Key achievements include:  
 
-### *1. Backend: Creating an API Endpoint to Fetch All Products*  
-- Developed a *GET* endpoint (/api/products) in the backend to send all product data to the frontend.  
+### 1. Backend: Creating an API Endpoint to Fetch All Products  
+- Developed a GET endpoint (/api/products) in the backend to send all product data to the frontend.  
 - Implemented MongoDB queries using Mongoose to retrieve all stored products.  
 - Ensured error handling to manage potential issues in fetching data.  
 
-### *2. Frontend: Fetching Data from API*  
-- Created an *API call function* using fetch or axios in React to retrieve product data from the backend.  
-- Managed the fetched data using React *useState* and *useEffect* hooks to ensure dynamic updates.  
+### 2. Frontend: Fetching Data from API  
+- Created an API call function using fetch or axios in React to retrieve product data from the backend.  
+- Managed the fetched data using React useState and useEffect hooks to ensure dynamic updates.  
 
-### *3. Displaying Products Dynamically*  
-- Passed the fetched product data to a *ProductCard* component.  
-- Used the product details (name, image, price, etc.) as *props* to display them dynamically.  
-- Applied responsive *CSS styling* to create a visually appealing product grid layout.  
+### 3. Displaying Products Dynamically  
+- Passed the fetched product data to a ProductCard component.  
+- Used the product details (name, image, price, etc.) as props to display them dynamically.  
+- Applied responsive CSS styling to create a visually appealing product grid layout.  
 
-### *4. Future Enhancements & Experimentation:*  
-- *Loading States:* Implemented a loading spinner while fetching product data.  
-- *Error Handling:* Displayed meaningful error messages in case of API failure.  
-- *Pagination & Filters:* Considered adding pagination and filtering options for better user experience.  
+### 4. Future Enhancements & Experimentation:  
+- Loading States: Implemented a loading spinner while fetching product data.  
+- Error Handling: Displayed meaningful error messages in case of API failure.  
+- Pagination & Filters: Considered adding pagination and filtering options for better user experience.  
 
 ## Milestone 12: Filtering Products by User Email and Displaying Data  
 
-In this milestone, we focused on filtering products based on the *user's email* and sending only relevant product data to the frontend. Key achievements include:  
+In this milestone, we focused on filtering products based on the user's email and sending only relevant product data to the frontend. Key achievements include:  
 
-### *1. Backend: Creating a Filtered API Endpoint*  
-- Developed a *GET* endpoint (/api/products/:email) to return products associated with a specific user email.  
-- Used *Mongoose* to query the database and fetch only the products uploaded by the provided email.  
-- Implemented *error handling* to manage scenarios where no products match the email.  
+### 1. Backend: Creating a Filtered API Endpoint  
+- Developed a GET endpoint (/api/products/:email) to return products associated with a specific user email.  
+- Used Mongoose to query the database and fetch only the products uploaded by the provided email.  
+- Implemented error handling to manage scenarios where no products match the email.  
 
-### *2. Frontend: Fetching Filtered Data from API*  
-- Created a function in React to fetch *only products uploaded by the logged-in user*.  
-- Used *Axios* or *Fetch API* to make requests to the backend with the logged-in user's email.  
-- Managed product data using *useState* and *useEffect* hooks.  
+### 2. Frontend: Fetching Filtered Data from API  
+- Created a function in React to fetch only products uploaded by the logged-in user.  
+- Used Axios or Fetch API to make requests to the backend with the logged-in user's email.  
+- Managed product data using useState and useEffect hooks.  
 
-### *3. Displaying Filtered Products Dynamically*  
-- Passed the fetched *filtered* product data to a *ProductCard* component.  
-- Rendered product details such as *name, image, price, and description* dynamically.  
+### 3. Displaying Filtered Products Dynamically  
+- Passed the fetched filtered product data to a ProductCard component.  
+- Rendered product details such as name, image, price, and description dynamically.  
 - Ensured a clean and structured UI using CSS and responsive layout techniques.  
 
-### *4. Future Enhancements & Experimentation:*  
-- *Role-Based Access:* Only allow authorized users (e.g., shop owners or admins) to upload and view specific products.  
-- *Advanced Filtering:* Extend filtering options to include categories, price ranges, and product availability.  
-- *Search Functionality:* Implement a search bar for users to quickly find their uploaded products. 
+### 4. Future Enhancements & Experimentation:  
+- Role-Based Access: Only allow authorized users (e.g., shop owners or admins) to upload and view specific products.  
+- Advanced Filtering: Extend filtering options to include categories, price ranges, and product availability.  
+- Search Functionality: Implement a search bar for users to quickly find their uploaded products. 
 
 ## Milestone 13: Updating Product Data and Form Auto-Fill  
 
@@ -318,59 +318,49 @@ In this milestone, we focused on implementing update functionality for product d
 - Added error messages for invalid data and success notifications on successful updates.  
 
 ### Future Enhancements & Experimentation  
-- *Admin-Only Access*: Restrict update functionality to authorized users, such as shop owners or admins.  
-- *Real-Time Updates*: Implement real-time data updates on the product listing page.  
-- *Optimized Form Design*: Enhance the form with file uploads for updating product images and improved field validation.
-
-
+- Admin-Only Access: Restrict update functionality to authorized users, such as shop owners or admins.  
+- Real-Time Updates: Implement real-time data updates on the product listing page.  
+- Optimized Form Design: Enhance the form with file uploads for updating product images and improved field validation.
 
 ## Milestone 14: Deleting Product Data from MongoDB  
 
 In this milestone, we focused on implementing delete functionality for product data, allowing users to remove existing product records from the database. Key achievements include:  
 
-### *Backend: Creating a Delete Endpoint*  
+### Backend: Creating a Delete Endpoint  
 - Developed a DELETE endpoint to remove product data from MongoDB using the product ID.  
 - Used Mongoose to find and delete the product by its ID.  
 - Implemented error handling to manage scenarios where the product ID does not exist.  
 
-### *Frontend: Delete Button and Request Handling*  
-- Added a *Delete button* to each product card.  
+### Frontend: Delete Button and Request Handling  
+- Added a Delete button to each product card.  
 - Clicking the Delete button sends a request to the delete endpoint with the product ID.  
 - Implemented a confirmation dialog to ensure users intend to delete the product.  
 - Updated the product list dynamically to remove the deleted product without refreshing the page.  
 
-### *UI and UX Enhancements*  
+### UI and UX Enhancements  
 - Provided feedback on successful or failed delete operations.  
 - Enhanced the user experience with a clean and responsive UI for managing product deletions.  
 
-### *Future Enhancements & Experimentation*  
-- *Soft Delete*: Instead of permanently deleting products, mark them as inactive for possible recovery later.  
-- *Role-Based Permissions*: Allow only authorized users (e.g., admins) to delete products.  
-- *Batch Deletion*: Add functionality to delete multiple products at once.
-
-
-
------
-
+### Future Enhancements & Experimentation  
+- Soft Delete: Instead of permanently deleting products, mark them as inactive for possible recovery later.  
+- Role-Based Permissions: Allow only authorized users (e.g., admins) to delete products.  
+- Batch Deletion: Add functionality to delete multiple products at once.
 
 ## Milestone 15: Creating a Responsive Navbar  
 
-In this milestone, we focused on building a reusable and responsive *Nav component* that enhances navigation across multiple pages of the e-commerce application. Key achievements include:  
+In this milestone, we focused on building a reusable and responsive Nav component that enhances navigation across multiple pages of the e-commerce application. Key achievements include:  
 
-### *Frontend: Creating the Nav Component*  
-- Designed a new *Nav component* with navigation links to all key pages:  
-  - *Home*  
-  - *My Products*  
-  - *Add Product*  
-  - *Cart*  
+### Frontend: Creating the Nav Component  
+- Designed a new Nav component with navigation links to all key pages:  
+  - Home  
+  - My Products  
+  - Add Product  
+  - Cart  
 - Implemented smooth navigation between these pages using React Router.  
 
-### *Responsive Design*  
-- Used *CSS Flexbox* and *media queries* to ensure the Navbar is fully responsive on all screen sizes (mobile, tablet, desktop).  
-- Added a *hamburger menu* for smaller screens to toggle the navigation links.
-
-
-
+### Responsive Design  
+- Used CSS Flexbox and media queries to ensure the Navbar is fully responsive on all screen sizes (mobile, tablet, desktop).  
+- Added a hamburger menu for smaller screens to toggle the navigation links.
 
 ## Milestone 16: Product Info Page with Quantity Selection and Add to Cart  
 
@@ -393,19 +383,85 @@ In this milestone, we focused on creating a dedicated *Product Info Page* to dis
 - Fetched product details from the backend using the product ID.  
 - Managed the selected quantity using *React state*.  
 - Implemented a function to handle adding the product to the cart, updating the cart state in the application.  
-=======
-- *Batch Deletion*: Add functionality to delete multiple products at once.
+- *Batch Deletion*: Add functionality to delete multiple products at once.
 
+## Milestone 17: Implementing Cart Functionality  
 
-## Milestone 17: Adding Products to Cart 
-In this milestone, we focused on implementing the functionality to add products to the cart. Key achievements include
-### Frontend: Adding Products to Cart
-- Designed a new Cart component that displays the products added to the cart, along with their
-- Implemented a function to handle adding products to the cart, updating the cart state in the application.
-- Used React state to manage the cart items and their quantities.
-### Backend: API Integration
-- Created a new API endpoint to handle adding products to the cart.
-- Implemented server-side logic to update the cart state in the database.
-### State Management and API Integration
-- Fetched the updated cart state from the backend after adding a product.
-- Managed the cart state using React state.
+In this milestone, we focused on adding *cart functionality* to the application, allowing users to store selected products in their cart.  
+
+### *Backend: Updating the User Schema*  
+- Modified the *User Schema* to include a cart field, which stores an array of selected products.  
+- Each product stored in the cart includes details such as *Product ID, Name, Quantity, and Price*.  
+- Used *Mongoose Schema Validation* to ensure data integrity.  
+
+### *Backend: Creating the Cart API Endpoint*  
+- Developed a *POST* endpoint (/api/cart/add) to receive product details from the frontend and store them in the user's cart.  
+- Implemented logic to check if a product already exists in the cart and update the quantity instead of adding duplicates.  
+- Ensured proper *error handling* to manage scenarios such as invalid product IDs or missing user authentication.  
+
+### *Frontend: Adding Products to Cart*  
+- Created a function to send *selected product details* to the backend when the "Add to Cart" button is clicked.  
+- Implemented *state management* to dynamically update the UI when a product is added to the cart.  
+- Displayed a confirmation message to notify users when a product is successfully added.  
+
+## Milestone 18: Fetching Cart Data  
+
+In this milestone, we implemented functionality to *retrieve cart data* for a logged-in user, allowing them to view the products they have added to their cart.  
+
+### *Backend: Creating an Endpoint to Fetch Cart Data*  
+- Developed a *GET* endpoint (/api/cart) to retrieve the cart contents for the authenticated user.  
+- Queried the database using *Mongoose* to fetch only the products stored in the user's cart.  
+- Implemented *error handling* to manage scenarios where the cart is empty or the user is not authenticated.  
+
+### *Frontend: Displaying Cart Data*  
+- Created a function to *fetch cart data* from the backend when the cart page loads.  
+- Used *state management* to dynamically update and display the list of products in the cart.  
+- Displayed important product details such as *name, image, quantity, and price*.
+
+## Milestone 19: Implementing the Cart Page with Quantity Controls  
+
+### Learning Goals 🎯  
+By the end of this milestone, you will:  
+- Update the *Cart Page* to display products dynamically.  
+- Implement *increase (+) and decrease (-) buttons* for quantity adjustment.  
+- Modify the backend to support cart updates.  
+
+---
+
+### *1. Frontend Updates*  
+- Added *ProductCart.jsx* to create a reusable cart item component.  
+- Edited *Cart.jsx* to display cart products using the new component.  
+- Implemented *buttons to increase and decrease quantity* for each product.  
+- Improved UI for better user experience.  
+
+---
+
+### *2. Backend Updates*  
+- Modified *product controller* to handle cart quantity updates.  
+- Ensured proper request handling for increasing and decreasing product quantity. 
+
+## Milestone 20: Implementing the User Profile Page  
+
+### Learning Goals 🎯  
+By the end of this milestone, you will:  
+- Create a *backend endpoint* to send user data to the frontend.  
+- Develop a *Profile Page* to display user details.  
+- Implement an *"Add Address"* button for address management.  
+
+---
+
+### *1. Backend Updates: User Data Endpoint*  
+- Created a *GET* endpoint (/api/user/profile) to send user data.  
+- Fetched *name, email, profile photo, and address* from the database.  
+- Ensured proper authentication before sending user details.  
+
+---
+
+### *2. Frontend Updates: Profile Page*  
+- Designed a *Profile Page* to display:  
+  - *Profile Section: User’s **photo, name, and email*.  
+  - *Address Section*:  
+    - Displayed the *user’s saved address*.  
+    - If no address is found, displayed *"No address found"*.  
+    - Added an *"Add Address"* button for address input.  
+- Styled the page for a *clean and user-friendly UI*.
