@@ -3,6 +3,8 @@ const router = express.Router();
 const Order = require('../model/order'); // Adjust path as needed
 const User = require('../model/user');   // Adjust path as needed
 
+
+
 router.post('/place-order', async (req, res) => {
     try {
         const { email, orderItems, shippingAddress } = req.body;
@@ -46,6 +48,36 @@ router.post('/place-order', async (req, res) => {
         console.error('Error placing orders:', error);
         res.status(500).json({ message: error.message });
     }
+});
+
+
+router.get('/my-orders',async (req,res)=>{
+    try{
+        const {email}=req.query;
+
+        //Validate the email parameter
+
+        if(!email){
+            return res.status(400).json({message:'Email is required.'})
+
+        }
+        //Retrieve userid from the user collection usinf provided
+
+        const user=await User.findOne({email});
+        if(!user){
+            return res.status(404).json({message:'User not found.'});
+        }
+
+        //find all orders associated w the user
+
+        const orders=await Order.find({user:user._id});
+        res.status(200).json({orders});
+
+    }catch(error){
+        console.error('Error fetching orders:',error);
+        res.status(500).json({message:error.message});
+    }
+    ;
 });
 
 module.exports = router;
