@@ -599,3 +599,141 @@ By the end of this milestone, you will:
 - *Order Confirmation Email*: Send users a confirmation email after placing an order.  
 
 ---
+
+
+
+### Milestone 25: Placing Orders in MongoDB
+Learning Goals 🎯
+By the end of this milestone, you will:
+
+Create an API endpoint to process and store orders in MongoDB.
+Retrieve user details using their email.
+Store order details for each product using the existing order schema.
+1. Backend Updates: Order Placement Endpoint
+Developed a POST endpoint (/api/orders/place) to receive:
+User email (to fetch _id from the database).
+Selected delivery address.
+List of ordered products.
+Retrieved the user’s _id based on the provided email.
+Created separate order entries for each product but linked to the same address.
+Stored all order details in the orders collection using Mongoose.
+2. Data Flow
+Frontend sends order details (products, user email, selected address) to the backend.
+Backend retrieves the user's _id from MongoDB using their email.
+Each product is stored as a separate order in the orders collection.
+The order includes:
+Product details (name, image, price, etc.).
+User information (retrieved via _id).
+Selected delivery address.
+3. Future Enhancements & Experimentation
+Order Status Tracking: Add a status field (Pending, Shipped, Delivered).
+Payment Integration: Store payment details and transaction IDs.
+Admin Panel: Allow admins to view and manage all orders.
+
+-----
+
+
+### Milestone 26: Fetching User Orders
+Learning Goals 🎯
+By the end of this milestone, you will:
+
+Create an API endpoint to retrieve all orders of a specific user.
+Fetch the user's _id from the database using their email.
+Retrieve and send all orders associated with that user.
+1. Backend Updates: Fetch User Orders Endpoint
+Developed a GET endpoint (/api/orders/:email) to:
+Receive the user’s email as a parameter.
+Retrieve the user’s _id from the database using the email.
+Query the orders collection to get all orders linked to that _id.
+Return the list of orders in the response.
+2. Data Flow
+Frontend sends a request with the user’s email to the backend.
+Backend retrieves the user's _id using their email.
+Orders collection is queried to fetch all orders related to the _id.
+Response contains the list of orders, including:
+Product details (name, image, price, etc.).
+Order status (Pending, Shipped, Delivered).
+Selected delivery address.
+3. Future Enhancements & Experimentation
+Order Filtering: Allow users to filter orders by status (e.g., Completed, Pending).
+Pagination: Implement pagination for users with multiple orders.
+Order Cancellation: Add functionality to cancel an order if it's not yet shipped.
+
+------
+
+
+
+### Milestone 27: Displaying User Orders
+Learning Goals 🎯
+By the end of this milestone, you will:
+
+Create a frontend page to display all user orders.
+Fetch order data from the backend using the /api/orders/:email endpoint.
+Display order details, including product info, order status, and delivery address.
+1. Frontend Updates: My Orders Page
+Created a My Orders page (MyOrders.jsx) to display user orders.
+Implemented a GET request to fetch orders from the backend.
+Sent the user's email in the request to retrieve their specific orders.
+Managed orders using React state (useState) and effects (useEffect).
+2. Displaying User Orders
+Rendered order details dynamically, including:
+Product Name & Image
+Price & Quantity
+Order Status (Pending, Shipped, Delivered)
+Selected Delivery Address
+3. Navigation & UI Improvements
+Added My Orders link to the Navbar for easy navigation.
+Ensured responsive design for a seamless user experience.
+4. Future Enhancements & Experimentation
+Order Tracking: Implement real-time order status updates.
+Order History: Allow users to filter orders based on date/status.
+Order Details Page: Add a detailed order view with invoice download.
+
+
+-----
+
+
+
+### Milestone 28: Order Cancellation Feature
+Learning Goals 🎯
+By the end of this milestone, you will:
+
+Enable users to cancel their placed orders.
+Implement order status management in the backend.
+Ensure the UI reflects canceled orders properly.
+1. Backend Updates: Cancel Order Endpoint
+Created a PUT endpoint (/api/orders/cancel/:id).
+The endpoint:
+Receives the order ID from the request.
+Finds the corresponding order in the database.
+Updates the order status to "Canceled".
+Saves the updated order in MongoDB.
+2. Handling Order Status & UI Updates
+Orders marked as Canceled are displayed with a "Canceled" status.
+The cancel button is hidden for already canceled orders.
+Implemented real-time UI updates after cancellation.
+
+-----
+
+
+### Milestone 29: Integrating PayPal for Online Payments
+Learning Goals 🎯
+By the end of this milestone, you will:
+
+Learn how to use the PayPal API.
+Understand how to integrate online payments into the application.
+1. Setting Up PayPal Developer Account
+Create a PayPal Developer Account at PayPal Developer Dashboard.
+Navigate to the Sandbox Accounts section.
+Copy the UserID of the sandbox account and save it.
+Locate and copy the Client ID from the sandbox accounts and save it for later use.
+2. Frontend Updates: Adding Payment Options
+Updated the Order Confirmation Page (OrderConfirmation.jsx).
+Added two payment options using radio buttons:
+Cash on Delivery (COD)
+Online Payment (PayPal)
+When selecting Online Payment, the PayPal buttons should be displayed dynamically.
+3. Future Enhancements & Next Steps
+In the next milestone, we will write the code to display and use PayPal payment buttons.
+Implement secure backend handling for online payments.
+Ensure a smooth user experience by handling payment success and failure cases.
