@@ -1,7 +1,7 @@
 // react-app/src/pages/Home.js
 
 import React, { useEffect, useState } from "react";
-import Product from "../components/auth/product";
+import Product from "../components/auth/Product";
 import Nav from "../components/auth/nav";
 
 export default function Home() {

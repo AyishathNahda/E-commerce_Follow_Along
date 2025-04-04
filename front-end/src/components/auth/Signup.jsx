@@ -1,10 +1,12 @@
+
 import { React, useState } from "react";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import { RxAvatar } from "react-icons/rx";
 import axios from "axios";
 import ValidationFormObject from "../../validation";
-
+import { useDispatch } from 'react-redux';
+import { setemail } from "../../store/userAction";
 
 const Signup = () => {
   const [email, setEmail] = useState("");
