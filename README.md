@@ -737,7 +737,6 @@ When selecting Online Payment, the PayPal buttons should be displayed dynamicall
 In the next milestone, we will write the code to display and use PayPal payment buttons.
 Implement secure backend handling for online payments.
 Ensure a smooth user experience by handling payment success and failure cases.
-
 # Milestone 30: Implementing PayPal Online Payment Integration  
 
 ## 🎯 What We Did  
@@ -757,3 +756,65 @@ In this milestone, we successfully integrated *PayPal online payments* into our 
 
 ### ⿢ Installed PayPal SDK in React  
 To integrate PayPal, we installed the required npm package:
+
+
+# 🌟 Milestone 31: Implementing Global State Management with Redux
+
+Welcome to Milestone 31! In this milestone, we learned how to implement *global state management* using *Redux*. This helps us manage data like user email across the entire app without the need for prop drilling.
+
+---
+
+## 🎯 Learning Goals
+By the end of this milestone, we understood:
+
+- How to use *Redux* for managing global application state.
+- How to configure and use a *Redux store* in a React app.
+- How to create and use *actions* and *reducers*.
+- How to share global data (like user email) across multiple components.
+
+---
+
+## 🧰 Steps We Followed
+
+### ⿡ Installed Redux and React-Redux
+
+We installed the necessary Redux packages:
+
+```bash
+
+"npm install redux react-redux"
+
+
+###   Milestone 32: Using Redux to Store and Access Email Globally
+
+Hey Kalvians! Welcome to Milestone 32!  
+Today, we expanded on our Redux setup by *storing the user email* in the global state during login and *accessing* it in all other pages using Redux hooks.
+
+---
+
+## 🎯 Learning Goals
+
+By the end of this milestone, we learned:
+
+- How to *dispatch* actions to update the Redux store.
+- How to *access* global state using useSelector.
+- How Redux simplifies global data sharing across components.
+
+---
+
+## 🧰 Steps We Followed
+
+### ⿡ Stored User Email in Global State (Login Page)
+
+In the Login page, once the user successfully logs in, we used the useDispatch hook to store the email in Redux.
+
+```js
+import { useDispatch } from "react-redux";
+import { setEmail } from "../store/userActions";
+
+const dispatch = useDispatch();
+
+// Example usage after successful login
+dispatch(setEmail(userEmail));
+
+
