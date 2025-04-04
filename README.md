@@ -737,3 +737,23 @@ When selecting Online Payment, the PayPal buttons should be displayed dynamicall
 In the next milestone, we will write the code to display and use PayPal payment buttons.
 Implement secure backend handling for online payments.
 Ensure a smooth user experience by handling payment success and failure cases.
+
+# Milestone 30: Implementing PayPal Online Payment Integration  
+
+## 🎯 What We Did  
+
+In this milestone, we successfully integrated *PayPal online payments* into our application. This allows users to choose between *Cash on Delivery (COD) and PayPal* for order payments. Below is a step-by-step breakdown of the tasks we completed.  
+
+---
+
+## 🛠 Steps We Followed  
+
+### ⿡ Created a PayPal Developer Account  
+- We registered on the *[PayPal Developer Dashboard](https://developer.paypal.com/)*.  
+- We navigated to the *Sandbox Accounts* section and generated a test account.  
+- From this test account, we copied the *Client ID* needed for integration.  
+
+---
+
+### ⿢ Installed PayPal SDK in React  
+To integrate PayPal, we installed the required npm package:
